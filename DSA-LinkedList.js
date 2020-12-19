@@ -35,7 +35,7 @@ class LinkedList {
   }
 
   //remove
-  remove(item) {
+  remove() {
     if (!this.head) {
       return null;
     }
@@ -71,4 +71,43 @@ class LinkedList {
     }
     return currentNode;
   }
+  //insertBefore
+  //insertLast
+  //insertAfter
+  //insertAt
 }
+
+//2 Create a singly linked list
+function main() {
+  const SLL = new LinkedList();
+
+  //create a linked list with the name SLL and add the following items to your linked list: Apollo, Boomer, Helo, Husker, Starbuck.
+  SLL.insertFirst("Husker");
+  SLL.insertFirst("Helo");
+  SLL.insertFirst("Boomer");
+  SLL.insertFirst("Apollo");
+  SLL.insertLast("Starbuck");
+
+  //Add Tauhida to the list
+  SLL.insertLast("Tauhida");
+  console.log(SLL);
+  display(SLL);
+}
+
+// display: displays the linked list
+function display(list) {
+  let currentNode = list.head;
+  let output = "";
+
+  if (!list.head) {
+    return null;
+  }
+  while (currentNode.next !== null) {
+    output += currentNode.value + " ";
+    currentNode = currentNode.next;
+  }
+  output += currentNode.value;
+  console.log(output);
+}
+
+main();
